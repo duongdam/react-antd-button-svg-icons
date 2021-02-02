@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import { CLFButtonSVG } from ".";
 
-describe('ExampleComponent', () => {
-  it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
-  })
-})
+describe("CLFButtonSVG", () => {
+  it("is truthy", () => {
+    expect(CLFButtonSVG).toBeTruthy();
+  });
+});
