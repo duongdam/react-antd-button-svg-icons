@@ -5,6 +5,7 @@ Welcome to ClassFunc. We are love to use new technology!
 Demo
 link: [https://duongdam.github.io/react-antd-button-svg-icon/](https://duongdam.github.io/react-antd-button-svg-icon/)
 
+Resource: [https://github.com/duongdam/react-antd-button-svg-icons](https://github.com/duongdam/react-antd-button-svg-icons)
 ## Install
 
 ```bash
