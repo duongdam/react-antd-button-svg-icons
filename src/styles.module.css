@@ -1,8 +1,59 @@
 @import '~antd/dist/antd.css';
 /* add css module styles here (optional) */
 
-.clf-flex-center {
+.flex {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
 }
+
+.grid {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important
+}
+
+.primary {
+  margin-right: 2px;
+  min-width: 125px;
+  min-height: 35px;
+  font-weight: 700;
+  color: #FFF;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  position: relative;
+}
+
+.primary :hover {
+  opacity: 0.8;
+  border-color: initial;
+  color: #FFF
+}
+
+.primary :focus {
+  opacity: 0.8;
+  border-color: initial;
+  color: #FFF
+}
+
+.primary .iconBtn {
+  max-width: 31px;
+  position: absolute;
+  left: 1px;
+  margin-right: 10px;
+}
+
+.primary .ant-btn-loading-icon {
+  position: absolute;
+  top: 50%;
+  margin-top: -0.5em;
+}
+
+.primary .iconBtn span {
+  margin-left: 20px;
+}
+
+.primary .buttonName {
+  margin-left: 20px;
+}
+
