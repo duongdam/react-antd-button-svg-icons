@@ -7,7 +7,8 @@ import { message } from "antd";
 const App = () => {
   return (
     <div style={{
-      display: "flex",
+      width: "100%",
+      display: "grid",
       justifyContent: "center",
       alignItems: "center",
       marginTop: 30
@@ -23,6 +24,41 @@ const App = () => {
         // loading={true}
         width={150}
         height={30}
+      />
+
+      <CLFButtonSVG
+        name={"Full Width"}
+        size={"default"}
+        iconComponent={<TestSVG />}
+        onClick={() => {
+          message.success("Hello CLFButtonSVG", 0.2);
+        }}
+        disable={false}
+        block={true}
+      />
+
+      <CLFButtonSVG
+        name={"Full Width Loading"}
+        size={"default"}
+        iconComponent={<TestSVG />}
+        onClick={() => {
+          message.success("Hello CLFButtonSVG", 0.2);
+        }}
+        disable={false}
+        loading={true}
+        block={true}
+      />
+
+      <CLFButtonSVG
+        name={"Full Width Disable"}
+        size={"default"}
+        iconComponent={<TestSVG />}
+        onClick={() => {
+          message.success("Hello CLFButtonSVG", 0.2);
+        }}
+        disable={true}
+        loading={false}
+        block={true}
       />
     </div>
   );
