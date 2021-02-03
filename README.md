@@ -6,6 +6,7 @@ Demo
 link: [https://duongdam.github.io/react-antd-button-svg-icons/](https://duongdam.github.io/react-antd-button-svg-icons/)
 
 Resource: [https://github.com/duongdam/react-antd-button-svg-icons](https://github.com/duongdam/react-antd-button-svg-icons)
+
 ## Install
 
 ```bash
@@ -14,6 +15,11 @@ npm install --save react-antd-button-svg-icons
 ```
 
 ## Usage
+
+```js
+import { CLFButtonSVG } from "react-antd-button-svg-icons";
+import "react-antd-button-svg-icons/dist/index.css";
+```
 
 ```js
 import React from "react";
@@ -42,6 +48,8 @@ const App = () => {
         // loading={true}
         width={150}
         height={30}
+        background="#1790FF"
+        borderColor="#1790FF"
       />
 
       <CLFButtonSVG

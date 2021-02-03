@@ -14,46 +14,46 @@
 }
 
 .primary {
-  margin: 5px;
+  margin: 5px !important;
   min-width: 125px;
   min-height: 35px;
-  font-weight: 700;
-  color: #FFF;
+  font-weight: 700 !important;
+  color: #FFF !important;
   font-size: 1.2rem;
-  border-radius: 25px;
-  position: relative;
+  border-radius: 25px !important;
+  position: relative !important;
 }
 
 .primary :hover {
-  opacity: 0.8;
-  border-color: initial;
-  color: #FFF
+  opacity: 0.8 !important;
+  border-color: initial !important;
+  color: #FFF !important
 }
 
 .primary :focus {
-  opacity: 0.8;
-  border-color: initial;
-  color: #FFF
+  opacity: 0.8 !important;
+  border-color: initial !important;
+  color: #FFF !important
 }
 
 .primary .iconBtn {
-  max-width: 31px;
-  position: absolute;
-  left: 1px;
-  margin-right: 10px;
+  max-width: 31px !important;
+  position: absolute !important;
+  left: 1px !important;
+  margin-right: 10px !important;
 }
 
 .primary .ant-btn-loading-icon {
-  position: absolute;
-  top: 50%;
-  margin-top: -0.5em;
+  position: absolute !important;
+  top: 50% !important;
+  margin-top: -0.5em !important;
 }
 
 .primary .iconBtn span {
-  margin-left: 20px;
+  margin-left: 20px !important;
 }
 
 .primary .buttonName {
-  margin-left: 20px;
+  margin-left: 20px !important;
 }
 
