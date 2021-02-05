@@ -7,6 +7,13 @@
   align-items: center !important;
 }
 
+.flexRevert {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: row-reverse !important;
+}
+
 .grid {
   display: flex !important;
   justify-content: center !important;
@@ -14,7 +21,7 @@
 }
 
 .primary {
-  margin: 5px !important;
+  margin: 5px;
   min-width: 125px;
   min-height: 35px;
   font-weight: 700 !important;
@@ -24,13 +31,13 @@
   position: relative !important;
 }
 
-.primary :hover {
+.primary:hover {
   opacity: 0.8 !important;
   border-color: initial !important;
   color: #FFF !important
 }
 
-.primary :focus {
+.primary:focus {
   opacity: 0.8 !important;
   border-color: initial !important;
   color: #FFF !important
@@ -41,6 +48,13 @@
   position: absolute !important;
   left: 1px !important;
   margin-right: 10px !important;
+}
+
+.primary .iconBtnRevert {
+  max-width: 31px !important;
+  position: absolute !important;
+  right: 1px !important;
+  margin-left: 10px !important;
 }
 
 .primary .ant-btn-loading-icon {
@@ -57,3 +71,6 @@
   margin-left: 20px !important;
 }
 
+.primary .buttonNameRevert {
+  margin-right: 20px !important;
+}

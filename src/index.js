@@ -3,31 +3,37 @@ import { Button } from "antd";
 import styles from "./styles.module.css";
 
 export const CLFButtonSVG = ({
-                               iconComponent = null,
-                               name = null,
-                               onClick = null,
-                               size = null,
-                               disable = false,
-                               loading = false,
-                               width = null,
-                               height = null,
-                               key = null,
-                               margin = null,
-                               padding = null,
-                               block = false,
-                               className = null,
-                               minWidth = null,
-                               minHeight = null,
+                               iconComponent,
+                               name,
+                               onClick,
+                               size,
+                               disable,
+                               loading,
+                               width,
+                               height,
+                               key,
+                               margin,
+                               padding,
+                               block,
+                               className,
+                               minWidth,
+                               minHeight,
                                background = "#1790FF",
-                               borderColor = "#1790FF"
+                               borderColor = "#1790FF",
+                               iconRevert = false
                              }) => {
   return (
     <Button
-      className={`${styles.primary} ${styles.flex} ${className}`}
+      className={`${styles.primary} ${iconRevert ?
+        styles.flexRevert :
+        styles.flex} ${className}`}
       icon={iconComponent ?
         {
           ...iconComponent,
-          props: { ...iconComponent.props, className: styles.iconBtn }
+          props: {
+            ...iconComponent.props,
+            className: iconRevert ? styles.iconBtnRevert : styles.iconBtn
+          }
         } :
         null}
       size={size}
@@ -47,7 +53,7 @@ export const CLFButtonSVG = ({
       key={key}
       block={block}
     >
-      <div className={styles.buttonName}>
+      <div className={iconRevert ? styles.buttonNameRevert : styles.buttonName}>
         {name}
       </div>
     </Button>

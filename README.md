@@ -53,6 +53,22 @@ const App = () => {
       />
 
       <CLFButtonSVG
+        name={"ClassFunc"}
+        size={"default"}
+        iconComponent={<TestSVG/>}
+        iconRevert={true}
+        onClick={() => {
+          message.success("Hello CLFButtonSVG", 0.2);
+        }}
+        disable={false}
+        // loading={true}
+        width={150}
+        height={30}
+        background="#1790FF"
+        borderColor="#1790FF"
+      />
+
+      <CLFButtonSVG
         name={"Full Width"}
         size={"default"}
         iconComponent={<TestSVG/>}
@@ -96,8 +112,8 @@ export default App;
 
 ```text
 Props: Here are some props of Antd Button.
-   display = "clf-flex-center",
    iconComponent = null, // Icon SVG Component
+   iconRevert = false, // Position icon End if true
    name = null,  // Button Name
    onClick = null, // Button onClick
    size = null,     // Button Size
