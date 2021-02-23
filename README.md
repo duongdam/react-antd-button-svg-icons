@@ -1,6 +1,8 @@
 # react-antd-button-svg-icons
 
-Welcome to ClassFunc. We are love to use new technology!
+> Welcome to ClassFunc. We love to use new technology!
+
+[![NPM](https://img.shields.io/npm/v/react-antd-button-svg-icons.svg)](https://www.npmjs.com/package/react-antd-button-svg-icons) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 Demo
 link: [https://duongdam.github.io/react-antd-button-svg-icons/](https://duongdam.github.io/react-antd-button-svg-icons/)
