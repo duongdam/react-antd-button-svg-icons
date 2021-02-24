@@ -9,6 +9,8 @@ link: [https://duongdam.github.io/react-antd-button-svg-icons/](https://duongdam
 
 Resource: [https://github.com/duongdam/react-antd-button-svg-icons](https://github.com/duongdam/react-antd-button-svg-icons)
 
+![plot](buttonNPM.gif)
+
 ## Install
 
 ```bash
