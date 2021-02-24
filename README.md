@@ -120,6 +120,7 @@ Props: Here are some props of Antd Button.
    iconRevert = false, // Position icon End if true
    name = null,  // Button Name
    onClick = null, // Button onClick
+   onKeyClick = null, // Button Ctrl or Command + Click
    size = null,     // Button Size
    disable = false, // true or false
    loading = false, // true or false
