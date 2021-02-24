@@ -1,6 +1,6 @@
 {
   "name": "react-antd-button-svg-icons",
-  "version": "2.1.8",
+  "version": "2.1.9",
   "description": "ClassFunc react-library",
   "author": "duongdam",
   "license": "MIT",
@@ -51,6 +51,8 @@
     "dist"
   ],
   "dependencies": {
-    "antd": "^4.11.2"
+    "antd": "^4.11.2",
+    "keyboardjs": "^2.6.4",
+    "react-use": "^17.1.1"
   }
 }

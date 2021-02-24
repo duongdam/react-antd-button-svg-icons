@@ -20,6 +20,9 @@ const App = () => {
         onClick={() => {
           message.success("Hello CLFButtonSVG", 0.2);
         }}
+        onKeyClick={() => {
+          message.success("This is key + click", 0.2);
+        }}
         disable={false}
         // loading={true}
         width={150}
@@ -33,6 +36,9 @@ const App = () => {
         iconRevert={true}
         onClick={() => {
           message.success("Hello CLFButtonSVG", 0.2);
+        }}
+        onKeyClick={() => {
+          message.success("This is key + click", 0.2);
         }}
         disable={false}
         // loading={true}
@@ -48,6 +54,9 @@ const App = () => {
         iconComponent={<TestSVG />}
         onClick={() => {
           message.success("Hello CLFButtonSVG", 0.2);
+        }}
+        onKeyClick={() => {
+          message.success("This is key + click", 0.2);
         }}
         disable={false}
         block={true}

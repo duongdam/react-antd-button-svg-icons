@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "antd";
 import styles from "./styles.module.css";
+import useKeyboardJs from "react-use/lib/useKeyboardJs";
 
 export const CLFButtonSVG = ({
                                iconComponent,
@@ -20,8 +21,12 @@ export const CLFButtonSVG = ({
                                minHeight,
                                background = "#1790FF",
                                borderColor = "#1790FF",
-                               iconRevert = false
+                               iconRevert = false,
+                               onKeyClick = null
                              }) => {
+  const [isCtrl] = useKeyboardJs("ctrl");
+  const [isCmd] = useKeyboardJs("command");
+
   return (
     <Button
       className={`${styles.primary} ${iconRevert ?
@@ -37,7 +42,16 @@ export const CLFButtonSVG = ({
         } :
         null}
       size={size}
-      onClick={onClick}
+      onClick={() => {
+        if (isCmd || isCtrl) {
+          if (onKeyClick && typeof onKeyClick === "function")
+            return onKeyClick();
+          return null;
+        }
+        if (onClick && typeof onClick === "function")
+          onClick();
+
+      }}
       disabled={disable}
       loading={loading}
       style={{
