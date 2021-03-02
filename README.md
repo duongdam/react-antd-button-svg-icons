@@ -22,14 +22,12 @@ npm install --save react-antd-button-svg-icons
 
 ```js
 import { CLFButtonSVG } from "react-antd-button-svg-icons";
-import "react-antd-button-svg-icons/dist/index.css";
 ```
 
 ```js
 import React from "react";
 import { ReactComponent as TestSVG } from "./test.svg";
 import { CLFButtonSVG } from "react-antd-button-svg-icons";
-import "react-antd-button-svg-icons/dist/index.css";
 import { message } from "antd";
 
 const App = () => {
@@ -39,8 +37,10 @@ const App = () => {
       display: "grid",
       justifyContent: "center",
       alignItems: "center",
-      marginTop: 30
+      marginTop: "100px"
     }}>
+
+      Default
       <CLFButtonSVG
         name={"ClassFunc"}
         size={"default"}
@@ -48,14 +48,14 @@ const App = () => {
         onClick={() => {
           message.success("Hello CLFButtonSVG", 0.2);
         }}
+        onKeyClick={() => {
+          message.success("This is key + click", 0.2);
+        }}
         disable={false}
-        // loading={true}
         width={150}
-        height={30}
-        background="#1790FF"
-        borderColor="#1790FF"
       />
 
+      Icon revert right
       <CLFButtonSVG
         name={"ClassFunc"}
         size={"default"}
@@ -64,14 +64,16 @@ const App = () => {
         onClick={() => {
           message.success("Hello CLFButtonSVG", 0.2);
         }}
+        onKeyClick={() => {
+          message.success("This is key + click", 0.2);
+        }}
         disable={false}
-        // loading={true}
         width={150}
-        height={30}
         background="#1790FF"
         borderColor="#1790FF"
       />
 
+      Full Width
       <CLFButtonSVG
         name={"Full Width"}
         size={"default"}
@@ -79,29 +81,47 @@ const App = () => {
         onClick={() => {
           message.success("Hello CLFButtonSVG", 0.2);
         }}
+        onKeyClick={() => {
+          message.success("This is key + click", 0.2);
+        }}
         disable={false}
         block={true}
+        margin={"5px"}
       />
 
+      With Tooltip
       <CLFButtonSVG
-        name={"Full Width Loading"}
+        name={"With tooltip"}
         size={"default"}
         iconComponent={<TestSVG/>}
         onClick={() => {
           message.success("Hello CLFButtonSVG", 0.2);
         }}
+        onKeyClick={() => {
+          message.success("This is key + click", 0.2);
+        }}
+        disable={false}
+        block={true}
+        margin={"5px"}
+        enableTooltip={true}
+        tooltipPlacement={"right"}
+      />
+
+      Loading
+      <CLFButtonSVG
+        name={"Full Width Loading"}
+        size={"default"}
+        iconComponent={<TestSVG/>}
         disable={false}
         loading={true}
         block={true}
       />
 
+      Disabled
       <CLFButtonSVG
         name={"Full Width Disable"}
         size={"default"}
         iconComponent={<TestSVG/>}
-        onClick={() => {
-          message.success("Hello CLFButtonSVG", 0.2);
-        }}
         disable={true}
         loading={false}
         block={true}
