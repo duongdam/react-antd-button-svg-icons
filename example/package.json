@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "react": "link:../node_modules/react",
+    "react-antd-button-svg-icons": "link:..",
     "react-dom": "link:../node_modules/react-dom",
-    "react-scripts": "link:../node_modules/react-scripts",
-    "react-antd-button-svg-icons": "link:.."
+    "react-scripts": "link:../node_modules/react-scripts"
   },
   "devDependencies": {
     "@babel/plugin-syntax-object-rest-spread": "^7.8.3"

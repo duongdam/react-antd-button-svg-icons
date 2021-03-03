@@ -29,8 +29,31 @@ import React from "react";
 import { ReactComponent as TestSVG } from "./test.svg";
 import { CLFButtonSVG } from "react-antd-button-svg-icons";
 import { message } from "antd";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles(theme => ({
+  antBtn: {
+    background: `red !important`,
+    borderColor: `red !important`,
+    textAlign: "left",
+    color: "#fff",
+    textTransform: "uppercase",
+    display: "flex",
+    "& svg": {
+      fill: 'red',
+    },
+    "& .ant-btn-block": {
+      width: "97%"
+    },
+    "& .clf-icon-Btn": {
+      left: "3px !important"
+    }
+  }
+}))
 
 const App = () => {
+  const classes = useStyles();
+
   return (
     <div style={{
       width: "100%",
@@ -125,6 +148,21 @@ const App = () => {
         disable={true}
         loading={false}
         block={true}
+        enableTooltip={true}
+        tooltipPlacement={"right"}
+      />
+
+      Disabled custom with makesTheme
+      <CLFButtonSVG
+        name={"Full Width Disable"}
+        size={"default"}
+        iconComponent={<TestSVG/>}
+        disable={true}
+        loading={false}
+        block={true}
+        enableTooltip={true}
+        tooltipPlacement={"right"}
+        className={classes.antBtn}
       />
     </div>
   );
@@ -155,6 +193,11 @@ Props: Here are some props of Antd Button.
    minHeight = null, // button minHeight
    background = "#1790FF", // button background color
    borderColor = "#1790FF" // button border color
+   fontWeight = 700,
+   fontSize = "1.2rem",
+   tooltipPlacement = "top",
+   tooltipBackground = "#1790FF",
+   enableTooltip = false
 ```
 
 ## License

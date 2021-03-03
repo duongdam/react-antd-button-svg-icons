@@ -1,6 +1,6 @@
 {
   "name": "react-antd-button-svg-icons",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "ClassFunc react-library",
   "author": "duongdam",
   "license": "MIT",
@@ -27,6 +27,7 @@
     "react": "^17.0.1"
   },
   "devDependencies": {
+    "@material-ui/core": "^4.11.3",
     "babel-eslint": "^10.0.3",
     "babel-plugin-import": "^1.13.3",
     "cross-env": "^7.0.2",

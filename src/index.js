@@ -23,6 +23,7 @@ const ButtonCustom = styled(Button)`
   min-height: ${props => `${props.otherprops.minHeight}px`};
   font-weight: ${props => props.otherprops.fontWeight};
   font-size: ${props => props.otherprops.fontSize};
+  pointer-events: ${props => props.disable ? "none" : "auto"};
 
   :focus {
     opacity: 0.8;
@@ -42,7 +43,7 @@ const ButtonCustom = styled(Button)`
     opacity: 0.6;
     background: ${props => props.background};
     border-color: ${props => props.background};
-    color: #FFF
+    color: #FFF;
   }
 
   &.ant-btn-clicked:after {
@@ -65,9 +66,13 @@ const ButtonCustom = styled(Button)`
     margin-top: -0.5em;
   }
 
+  & .anticon svg {
+    fill: #FFF;
+  }
+
   & .clf-icon-Btn {
     position: absolute;
-    left: 1px;
+    left: 3px;
     max-width: 31px;
     margin-right: 10px;
   }
@@ -82,6 +87,10 @@ const ButtonCustom = styled(Button)`
   &.clf-icon-Btn span {
     margin-left: 20px;
   }
+`;
+
+const StyledButtonWrapper = styled.span`
+  cursor: ${props => props.disable ? "not-allowed" : "pointer"};
 `;
 
 const NameCustom = styled.div(props => ({
@@ -144,46 +153,48 @@ export const CLFButtonSVG = ({
       arrowPointAtCenter
       getPopupContainer={() => document.getElementById(id)}
     >
-      <ButtonCustom
-        ref={inputRef}
-        id={id}
-        width={width}
-        height={height}
-        margin={margin}
-        padding={padding}
-        className={className}
-        color={color}
-        otherprops={{
-          minWidth,
-          minHeight,
-          borderRadius,
-          borderColor,
-          iconRevert,
-          fontWeight,
-          fontSize
-        }}
-        background={background}
-        size={size}
-        disabled={disable}
-        loading={loading}
-        key={key}
-        block={block}
-        icon={iconComponent ?
-          {
-            ...iconComponent,
-            props: {
-              ...iconComponent.props,
-              className: iconRevert ? "clf-icon-Btn-Revert" : "clf-icon-Btn"
-            }
-          } :
-          null
-        }
-        onClick={onClickFunction}
-      >
-        <NameCustom otherprops={{ iconRevert }}>
-          {name}
-        </NameCustom>
-      </ButtonCustom>
+      <StyledButtonWrapper disable={disable}>
+        <ButtonCustom
+          ref={inputRef}
+          id={id}
+          width={width}
+          height={height}
+          margin={margin}
+          padding={padding}
+          className={className}
+          color={color}
+          otherprops={{
+            minWidth,
+            minHeight,
+            borderRadius,
+            borderColor,
+            iconRevert,
+            fontWeight,
+            fontSize
+          }}
+          background={background}
+          size={size}
+          disabled={disable}
+          loading={loading}
+          key={key}
+          block={block}
+          icon={iconComponent ?
+            {
+              ...iconComponent,
+              props: {
+                ...iconComponent.props,
+                className: iconRevert ? "clf-icon-Btn-Revert" : "clf-icon-Btn"
+              }
+            } :
+            null
+          }
+          onClick={onClickFunction}
+        >
+          <NameCustom otherprops={{ iconRevert }}>
+            {name}
+          </NameCustom>
+        </ButtonCustom>
+      </StyledButtonWrapper>
     </TooltipCustom>
   );
 };
