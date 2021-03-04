@@ -36,6 +36,7 @@ const App = () => {
       marginTop: "100px"
     }}>
 
+      With no icon
       <CLFButtonSVG
         name={"ClassFunc"}
         size={"default"}
