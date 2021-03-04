@@ -93,9 +93,25 @@ const StyledButtonWrapper = styled.span`
   cursor: ${props => props.disable ? "not-allowed" : "pointer"};
 `;
 
-const NameCustom = styled.div(props => ({
+const NameCustomWithIcon = styled.div(props => ({
   marginLeft: props.otherprops.iconRevert ? "" : "20px",
-  marginRight: props.otherprops.iconRevert ? "20px" : ""
+  marginRight: props.otherprops.iconRevert ? "20px" : "",
+  width: "100%",
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+  whiteSpace: "nowrap"
+}));
+
+const NameCustom = styled.div(props => ({
+  margin: "auto",
+  display: "flex",
+  height: "100%",
+  justifyContent: "center",
+  alignItems: "center",
+  width: "100%",
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+  whiteSpace: "nowrap"
 }));
 
 const TooltipCustom = styled(Tooltip)`
@@ -104,7 +120,7 @@ const TooltipCustom = styled(Tooltip)`
 
 export const CLFButtonSVG = ({
                                id = uuidv4(),
-                               iconComponent,
+                               iconComponent = null,
                                name,
                                onClick,
                                size,
@@ -170,7 +186,8 @@ export const CLFButtonSVG = ({
             borderColor,
             iconRevert,
             fontWeight,
-            fontSize
+            fontSize,
+            iconComponent
           }}
           background={background}
           size={size}
@@ -190,9 +207,16 @@ export const CLFButtonSVG = ({
           }
           onClick={onClickFunction}
         >
-          <NameCustom otherprops={{ iconRevert }}>
-            {name}
-          </NameCustom>
+          {
+            !iconComponent ?
+              <NameCustom otherprops={{ iconRevert }}>
+                {name}
+              </NameCustom>
+              :
+              <NameCustomWithIcon otherprops={{ iconRevert }}>
+                {name}
+              </NameCustomWithIcon>
+          }
         </ButtonCustom>
       </StyledButtonWrapper>
     </TooltipCustom>

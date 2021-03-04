@@ -36,6 +36,18 @@ const App = () => {
       marginTop: "100px"
     }}>
 
+      <CLFButtonSVG
+        name={"ClassFunc"}
+        size={"default"}
+        onClick={() => {
+          message.success("Hello CLFButtonSVG", 0.2);
+        }}
+        onKeyClick={() => {
+          message.success("This is key + click", 0.2);
+        }}
+        width={150}
+      />
+
       Default
       <CLFButtonSVG
         name={"ClassFunc"}

@@ -40,7 +40,7 @@ const useStyles = makeStyles(theme => ({
     textTransform: "uppercase",
     display: "flex",
     "& svg": {
-      fill: 'red',
+      fill: "red"
     },
     "& .ant-btn-block": {
       width: "97%"
@@ -49,7 +49,7 @@ const useStyles = makeStyles(theme => ({
       left: "3px !important"
     }
   }
-}))
+}));
 
 const App = () => {
   const classes = useStyles();
@@ -62,6 +62,19 @@ const App = () => {
       alignItems: "center",
       marginTop: "100px"
     }}>
+
+      Default no icon
+      <CLFButtonSVG
+        name={"ClassFunc"}
+        size={"default"}
+        onClick={() => {
+          message.success("Hello CLFButtonSVG", 0.2);
+        }}
+        onKeyClick={() => {
+          message.success("This is key + click", 0.2);
+        }}
+        width={150}
+      />
 
       Default
       <CLFButtonSVG
