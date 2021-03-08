@@ -2,13 +2,15 @@ import React from "react";
 import { ReactComponent as TestSVG } from "./test.svg";
 import { CLFButtonSVG } from "react-antd-button-svg-icons";
 import { message } from "antd";
+import "antd/lib/message/style/css";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
   antBtn: {
     background: `red !important`,
     borderColor: `red !important`,
-    textAlign: "left",
+    // textAlign: "left",
+    textAlign: "center",
     color: "#fff",
     textTransform: "uppercase",
     display: "flex",
@@ -19,7 +21,7 @@ const useStyles = makeStyles(theme => ({
       width: "97%"
     },
     "& .clf-icon-Btn": {
-      left: "3px !important"
+      left: "1px !important"
     }
   }
 }));
@@ -31,9 +33,11 @@ const App = () => {
     <div style={{
       width: "100%",
       display: "grid",
-      justifyContent: "center",
-      alignItems: "center",
-      marginTop: "100px"
+      maxWidth: "800px",
+      // justifyContent: "center",
+      // alignItems: "center",
+      padding: "100px 50px",
+      margin: "100px auto"
     }}>
 
       With no icon
@@ -46,7 +50,7 @@ const App = () => {
         onKeyClick={() => {
           message.success("This is key + click", 0.2);
         }}
-        width={150}
+        width={"150px"}
       />
 
       Default
@@ -61,7 +65,7 @@ const App = () => {
           message.success("This is key + click", 0.2);
         }}
         disable={false}
-        width={150}
+        width={"150px"}
       />
 
       Icon revert right
@@ -77,9 +81,9 @@ const App = () => {
           message.success("This is key + click", 0.2);
         }}
         disable={false}
-        width={150}
-        background="#1790FF"
-        borderColor="#1790FF"
+        width={"150px"}
+        background={"#1790FF"}
+        borderColor={"#1790FF"}
       />
 
       Full Width
