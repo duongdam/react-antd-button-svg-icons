@@ -99,7 +99,7 @@ const StyledButtonWrapper = styled.span`
 const NameCustomWithIcon = styled.div(props => ({
   marginLeft: props.otherprops.iconRevert ? "" : "20px",
   marginRight: props.otherprops.iconRevert ? "20px" : "",
-  width: "80%",
+  width: "70%",
   overflow: "hidden",
   textOverflow: "ellipsis",
   whiteSpace: "nowrap"
@@ -108,7 +108,7 @@ const NameCustomWithIcon = styled.div(props => ({
 const NameCustom = styled.div(props => ({
   margin: "auto",
   height: "100%",
-  width: "80%",
+  width: "70%",
   overflow: "hidden",
   textOverflow: "ellipsis",
   whiteSpace: "nowrap"
