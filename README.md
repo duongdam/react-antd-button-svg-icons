@@ -29,13 +29,15 @@ import React from "react";
 import { ReactComponent as TestSVG } from "./test.svg";
 import { CLFButtonSVG } from "react-antd-button-svg-icons";
 import { message } from "antd";
+import "antd/lib/message/style/css";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
   antBtn: {
     background: `red !important`,
     borderColor: `red !important`,
-    textAlign: "left",
+    // textAlign: "left",
+    textAlign: "center",
     color: "#fff",
     textTransform: "uppercase",
     display: "flex",
@@ -46,7 +48,7 @@ const useStyles = makeStyles(theme => ({
       width: "97%"
     },
     "& .clf-icon-Btn": {
-      left: "3px !important"
+      left: "1px !important"
     }
   }
 }));
@@ -58,12 +60,14 @@ const App = () => {
     <div style={{
       width: "100%",
       display: "grid",
-      justifyContent: "center",
-      alignItems: "center",
-      marginTop: "100px"
+      maxWidth: "800px",
+      // justifyContent: "center",
+      // alignItems: "center",
+      padding: "100px 50px",
+      margin: "100px auto"
     }}>
 
-      Default no icon
+      With no icon
       <CLFButtonSVG
         name={"ClassFunc"}
         size={"default"}
@@ -73,7 +77,7 @@ const App = () => {
         onKeyClick={() => {
           message.success("This is key + click", 0.2);
         }}
-        width={150}
+        width={"150px"}
       />
 
       Default
@@ -88,7 +92,7 @@ const App = () => {
           message.success("This is key + click", 0.2);
         }}
         disable={false}
-        width={150}
+        width={"150px"}
       />
 
       Icon revert right
@@ -104,9 +108,9 @@ const App = () => {
           message.success("This is key + click", 0.2);
         }}
         disable={false}
-        width={150}
-        background="#1790FF"
-        borderColor="#1790FF"
+        width={"150px"}
+        background={"#1790FF"}
+        borderColor={"#1790FF"}
       />
 
       Full Width
@@ -185,32 +189,80 @@ export default App;
 
 ```
 
+## Prop types
+
 ```text
-Props: Here are some props of Antd Button.
-   iconComponent = null, // Icon SVG Component
-   iconRevert = false, // Position icon End if true
-   name = null,  // Button Name
-   onClick = null, // Button onClick
-   onKeyClick = null, // Button Ctrl or Command + Click
-   size = null,     // Button Size
-   disable = false, // true or false
-   loading = false, // true or false
-   width = null, // Button width
-   height = null, // Button height
-   key = null, // Button key
-   margin = null,
-   padding = null,
-   block = false, // if true -> full width
-   className = null, // add more className
-   minWidth = null, // button minWidth
-   minHeight = null, // button minHeight
-   background = "#1790FF", // button background color
-   borderColor = "#1790FF" // button border color
-   fontWeight = 700,
-   fontSize = "1.2rem",
-   tooltipPlacement = "top",
-   tooltipBackground = "#1790FF",
-   enableTooltip = false
+  id: PropType.oneOfType([PropType.string, PropType.number]),
+  iconComponent: PropType.element,
+  name: PropType.string,
+  onClick: PropType.func,
+  size: PropType.string,
+  disable: PropType.bool,
+  loading: PropType.bool,
+  width: PropType.oneOfType([PropType.number, PropType.string]),
+  height: PropType.oneOfType([PropType.number, PropType.string]),
+  key: PropType.string,
+  margin: PropType.string,
+  padding: PropType.string,
+  block: PropType.bool,
+  className: PropType.string,
+  minWidth: PropType.oneOfType([PropType.number, PropType.string]),
+  minHeight: PropType.oneOfType([PropType.number, PropType.string]),
+  color: PropType.string,
+  borderRadius: PropType.oneOfType([PropType.string]),
+  background: PropType.string,
+  borderColor: PropType.string,
+  iconRevert: PropType.bool,
+  onKeyClick: PropType.func,
+  fontWeight: PropType.oneOfType([PropType.string, PropType.number]),
+  fontSize: PropType.oneOfType([PropType.string]),
+  tooltipPlacement: PropType.oneOf([
+    "topLeft",
+    "top",
+    "topRight",
+    "leftTop",
+    "left",
+    "leftBottom",
+    "rightTop",
+    "right",
+    "rightBottom",
+    "bottomLeft",
+    "bottom",
+    "bottomRight"]),
+  tooltipBackground: PropType.string,
+  enableTooltip: PropType.bool
+```
+
+## Default props
+
+```text
+  id: uuidv4(),
+  iconComponent: null,
+  name: "ClassFunc Button",
+  onClick: null,
+  size: "default",
+  disable: false,
+  loading: false,
+  key: null,
+  margin: "5px",
+  padding: "unset",
+  block: false,
+  className: null,
+  width: null,
+  height: "auto",
+  minWidth: "125px",
+  minHeight: "35px",
+  fontWeight: 700,
+  color: "#FFF",
+  borderRadius: "25px",
+  background: "#1790FF",
+  borderColor: "#1790FF",
+  iconRevert: false,
+  onKeyClick: null,
+  fontSize: "1.2rem",
+  tooltipPlacement: "top",
+  tooltipBackground: "#1790FF",
+  enableTooltip: false
 ```
 
 ## License
