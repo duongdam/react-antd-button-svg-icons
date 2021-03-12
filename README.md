@@ -7,7 +7,7 @@
 Demo
 link: [https://duongdam.github.io/react-antd-button-svg-icons/](https://duongdam.github.io/react-antd-button-svg-icons/)
 
-Resource: [https://github.com/duongdam/react-antd-button-svg-icons](https://github.com/duongdam/react-antd-button-svg-icons)
+Resource: [https://github.com/duongdam/react-antd-button-svg-icons/tree/nextjs](https://github.com/duongdam/react-antd-button-svg-icons)
 
 ![plot](buttonNPM.gif)
 
