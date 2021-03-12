@@ -83,9 +83,6 @@ const App = () => {
         onClick={() => {
           message.success("Hello CLFButtonSVG", 0.2);
         }}
-        onKeyClick={() => {
-          message.success("This is key + click", 0.2);
-        }}
         width={"150px"}
       />
 
@@ -97,9 +94,6 @@ const App = () => {
         iconComponent={<TestSVG/>}
         onClick={() => {
           message.success("Hello CLFButtonSVG", 0.2);
-        }}
-        onKeyClick={() => {
-          message.success("This is key + click", 0.2);
         }}
         disable={false}
         width={"150px"}
@@ -114,9 +108,6 @@ const App = () => {
         iconRevert={true}
         onClick={() => {
           message.success("Hello CLFButtonSVG", 0.2);
-        }}
-        onKeyClick={() => {
-          message.success("This is key + click", 0.2);
         }}
         disable={false}
         width={"150px"}
@@ -133,9 +124,6 @@ const App = () => {
         onClick={() => {
           message.success("Hello CLFButtonSVG", 0.2);
         }}
-        onKeyClick={() => {
-          message.success("This is key + click", 0.2);
-        }}
         disable={false}
         block={true}
         margin={"5px"}
@@ -149,9 +137,6 @@ const App = () => {
         iconComponent={<TestSVG/>}
         onClick={() => {
           message.success("Hello CLFButtonSVG", 0.2);
-        }}
-        onKeyClick={() => {
-          message.success("This is key + click", 0.2);
         }}
         disable={false}
         block={true}
@@ -230,7 +215,6 @@ export default App;
   background: PropType.string,
   borderColor: PropType.string,
   iconRevert: PropType.bool,
-  onKeyClick: PropType.func,
   fontWeight: PropType.oneOfType([PropType.string, PropType.number]),
   fontSize: PropType.oneOfType([PropType.string]),
   tooltipPlacement: PropType.oneOf([
@@ -275,7 +259,6 @@ export default App;
   background: "#1790FF",
   borderColor: "#1790FF",
   iconRevert: false,
-  onKeyClick: null,
   fontSize: "1.2rem",
   tooltipPlacement: "top",
   tooltipBackground: "#1790FF",

@@ -3,7 +3,7 @@ import { Button, Tooltip } from "antd";
 import styled from "styled-components";
 import PropType from "prop-types";
 import "./styles.module.css";
-import { useKeyboardJs } from "react-use";
+// import { useKeyboardJs } from "react-use";
 
 const ButtonCustom = styled(Button)`
   position: relative;
@@ -134,15 +134,15 @@ export const CLFButtonSVG = ({
                                ...rest
                              }) => {
   const inputRef = React.createRef();
-  const [isCtrl] = useKeyboardJs("ctrl");
-  const [isCmd] = useKeyboardJs("command");
+  // const [isCtrl] = useKeyboardJs("ctrl");
+  // const [isCmd] = useKeyboardJs("command");
 
   const onClickFunction = () => {
-    if (isCmd || isCtrl) {
-      if (onKeyClick && typeof onKeyClick === "function")
-        return onKeyClick();
-      return null;
-    }
+    // if (isCmd || isCtrl) {
+    //   if (onKeyClick && typeof onKeyClick === "function")
+    //     return onKeyClick();
+    //   return null;
+    // }
     if (onClick && typeof onClick === "function")
       onClick();
   };
@@ -231,7 +231,7 @@ CLFButtonSVG.propTypes = {
   background: PropType.string,
   borderColor: PropType.string,
   iconRevert: PropType.bool,
-  onKeyClick: PropType.func,
+  // onKeyClick: PropType.func,
   fontWeight: PropType.oneOfType([PropType.string, PropType.number]),
   fontSize: PropType.oneOfType([PropType.string]),
   tooltipPlacement: PropType.oneOf([
@@ -274,7 +274,7 @@ CLFButtonSVG.defaultProps = {
   background: "#1790FF",
   borderColor: "#1790FF",
   iconRevert: false,
-  onKeyClick: null,
+  // onKeyClick: null,
   fontSize: "1.2rem",
   tooltipPlacement: "top",
   tooltipBackground: "#1790FF",
