@@ -1,8 +1,9 @@
 import React from "react";
 import { ReactComponent as TestSVG } from "./test.svg";
 import { CLFButtonSVG } from "react-antd-button-svg-icons";
+import "react-antd-button-svg-icons/dist/index.css";
 import { message } from "antd";
-import "antd/lib/message/style/css";
+import "antd/dist/antd.css";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
@@ -42,6 +43,7 @@ const App = () => {
 
       With no icon
       <CLFButtonSVG
+        id={"1"}
         name={"ClassFunc"}
         size={"default"}
         onClick={() => {
@@ -55,6 +57,7 @@ const App = () => {
 
       Default
       <CLFButtonSVG
+        id={"2"}
         name={"ClassFunc"}
         size={"default"}
         iconComponent={<TestSVG />}
@@ -70,6 +73,7 @@ const App = () => {
 
       Icon revert right
       <CLFButtonSVG
+        id={"3"}
         name={"ClassFunc"}
         size={"default"}
         iconComponent={<TestSVG />}
@@ -88,6 +92,7 @@ const App = () => {
 
       Full Width
       <CLFButtonSVG
+        id={"4"}
         name={"Full Width"}
         size={"default"}
         iconComponent={<TestSVG />}
@@ -104,6 +109,7 @@ const App = () => {
 
       With Tooltip
       <CLFButtonSVG
+        id={"5"}
         name={"With tooltip"}
         size={"default"}
         iconComponent={<TestSVG />}
@@ -122,6 +128,7 @@ const App = () => {
 
       Loading
       <CLFButtonSVG
+        id={"6"}
         name={"Full Width Loading"}
         size={"default"}
         iconComponent={<TestSVG />}
@@ -132,6 +139,7 @@ const App = () => {
 
       Disabled
       <CLFButtonSVG
+        id={"7"}
         name={"Full Width Disable"}
         size={"default"}
         iconComponent={<TestSVG />}
@@ -144,6 +152,7 @@ const App = () => {
 
       Disabled custom with makesTheme
       <CLFButtonSVG
+        id={"8"}
         name={"Full Width Disable"}
         size={"default"}
         iconComponent={<TestSVG />}
