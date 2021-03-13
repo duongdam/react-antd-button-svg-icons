@@ -71,6 +71,11 @@ const ButtonCustom = styled(Button)`
     margin-left: 10px;
   }
 
+  & .anticon img {
+    fill: #FFF;
+    margin-left: 10px;
+  }
+
   & .clf-icon-Btn {
     position: absolute;
     left: 3px;
@@ -95,21 +100,23 @@ const StyledButtonWrapper = styled.span`
 `;
 
 const NameCustomWithIcon = styled.div(props => ({
-  marginLeft: props.otherprops.iconRevert ? "" : "20px",
-  marginRight: props.otherprops.iconRevert ? "20px" : "",
-  width: "70%",
+  marginLeft: props.otherprops.iconRevert ? "" : "10px",
+  marginRight: props.otherprops.iconRevert ? "10px" : "",
+  width: "90%",
   overflow: "hidden",
   textOverflow: "ellipsis",
-  whiteSpace: "nowrap"
+  whiteSpace: "nowrap",
+  fontSize: "1rem"
 }));
 
 const NameCustom = styled.div(props => ({
   margin: "auto",
   height: "100%",
-  width: "70%",
+  width: "90%",
   overflow: "hidden",
   textOverflow: "ellipsis",
-  whiteSpace: "nowrap"
+  whiteSpace: "nowrap",
+  fontSize: "1rem"
 }));
 
 const TooltipCustom = styled(Tooltip)`
