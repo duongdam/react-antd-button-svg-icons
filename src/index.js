@@ -18,7 +18,7 @@ const ButtonCustom = styled(Button)`
   border-color: ${props => props.otherprops.borderColor};
   color: ${props => props.color};
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: ${props => props.otherprops.iconRevert ? "row-reverse" : ""};
   font-weight: ${props => props.otherprops.fontWeight};
@@ -100,8 +100,8 @@ const StyledButtonWrapper = styled.span`
 `;
 
 const NameCustomWithIcon = styled.div(props => ({
-  marginLeft: props.otherprops.iconRevert ? "" : "10px",
-  marginRight: props.otherprops.iconRevert ? "10px" : "",
+  // marginLeft: props.otherprops.iconRevert ? "" : "10px",
+  // marginRight: props.otherprops.iconRevert ? "10px" : "",
   width: "90%",
   overflow: "hidden",
   textOverflow: "ellipsis",
@@ -193,7 +193,7 @@ export const CLFButtonSVG = ({
               ...iconComponent,
               props: {
                 ...iconComponent.props,
-                className: iconRevert ? "clf-icon-Btn-Revert" : "clf-icon-Btn"
+                style: iconRevert ? "clf-icon-Btn-Revert" : "clf-icon-Btn"
               }
             } :
             null
