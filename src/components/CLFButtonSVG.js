@@ -139,14 +139,14 @@ const CLFButtonSVG = ({
   const [isCtrl] = useKeyboardJs("ctrl");
   const [isCmd] = useKeyboardJs("command");
 
-  const onClickFunction = () => {
+  const onClickFunction = (event) => {
     if (isCmd || isCtrl) {
       if (onKeyClick && typeof onKeyClick === "function")
         return onKeyClick();
       return null;
     }
     if (onClick && typeof onClick === "function")
-      onClick();
+      onClick(event);
   };
 
   return (
