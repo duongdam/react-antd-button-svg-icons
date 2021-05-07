@@ -1,9 +1,11 @@
 import React from "react";
 import { ReactComponent as TestSVG } from "./test.svg";
 import { CLFButtonSVG } from "react-antd-button-svg-icons";
-import { message } from "antd";
+import { message, Typography } from "antd";
 import "antd/lib/message/style/css";
 import { makeStyles } from "@material-ui/core/styles";
+
+const { Text } = Typography;
 
 const useStyles = makeStyles(theme => ({
   antBtn: {
@@ -55,7 +57,7 @@ const App = () => {
 
       Default
       <CLFButtonSVG
-        name={"ClassFunc"}
+        name={<Text>Default</Text>}
         size={"default"}
         iconComponent={<TestSVG />}
         onClick={() => {

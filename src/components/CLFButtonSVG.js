@@ -27,6 +27,12 @@ const ButtonCustom = styled(Button)`
   font-size: ${props => props.otherprops.fontSize};
   pointer-events: ${props => props.disable ? "none" : "auto"};
 
+  &[ant-click-animating-without-extra-node='true']::after, .ant-click-animating-node {
+    animation: ${props => props.otherprops.offAnimated ? "0s !important" : null};
+    -webkit-animation: ${props => props.otherprops.offAnimated ? "0s !important" : null};
+    border-color: ${props => props.otherprops.offAnimated ? "transparent !important" : null};
+  }
+
   :focus {
     opacity: 0.8;
     background: ${props => props.background};
@@ -133,6 +139,7 @@ const CLFButtonSVG = ({
                         borderRadius,
                         fontSize,
                         fontWeight,
+                        offAnimated,
                         ...rest
                       }) => {
   const inputRef = React.createRef();
@@ -175,7 +182,8 @@ const CLFButtonSVG = ({
             iconRevert,
             fontWeight,
             fontSize,
-            iconComponent
+            iconComponent,
+            offAnimated
           }}
           background={rest.background}
           size={rest.size}
@@ -194,6 +202,7 @@ const CLFButtonSVG = ({
             null
           }
           onClick={onClickFunction}
+
         >
           {
             !iconComponent ?
@@ -214,7 +223,7 @@ const CLFButtonSVG = ({
 CLFButtonSVG.propTypes = {
   id: PropType.oneOfType([PropType.string, PropType.number]),
   iconComponent: PropType.element,
-  name: PropType.string,
+  name: PropType.oneOfType([PropType.string, PropType.element, PropType.elementType]),
   onClick: PropType.func,
   size: PropType.string,
   disable: PropType.bool,
@@ -250,7 +259,8 @@ CLFButtonSVG.propTypes = {
     "bottom",
     "bottomRight"]),
   tooltipBackground: PropType.string,
-  enableTooltip: PropType.bool
+  enableTooltip: PropType.bool,
+  offAnimated: PropType.bool
 };
 
 CLFButtonSVG.defaultProps = {
@@ -280,7 +290,8 @@ CLFButtonSVG.defaultProps = {
   fontSize: "1.2rem",
   tooltipPlacement: "top",
   tooltipBackground: "#1790FF",
-  enableTooltip: false
+  enableTooltip: false,
+  offAnimated: true
 };
 
 export default CLFButtonSVG;

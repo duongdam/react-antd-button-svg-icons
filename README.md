@@ -11,6 +11,12 @@ Resource: [https://github.com/duongdam/react-antd-button-svg-icons](https://gith
 
 ![plot](buttonNPM.gif)
 
+## New release
+
+```angular2html
+ - Add new props turn off animated: offAnimated : default "true"
+```
+
 ## Install
 
 ```bash
@@ -194,7 +200,7 @@ export default App;
 ```text
   id: PropType.oneOfType([PropType.string, PropType.number]),
   iconComponent: PropType.element,
-  name: PropType.string,
+  name: PropType.oneOfType([PropType.string, PropType.element, PropType.elementType]),
   onClick: PropType.func,
   size: PropType.string,
   disable: PropType.bool,
@@ -230,7 +236,8 @@ export default App;
     "bottom",
     "bottomRight"]),
   tooltipBackground: PropType.string,
-  enableTooltip: PropType.bool
+  enableTooltip: PropType.bool,
+  offAnimated: PropType.bool
 ```
 
 ## Default props
@@ -262,7 +269,8 @@ export default App;
   fontSize: "1.2rem",
   tooltipPlacement: "top",
   tooltipBackground: "#1790FF",
-  enableTooltip: false
+  enableTooltip: false,
+  offAnimated: true
 ```
 
 ## License
