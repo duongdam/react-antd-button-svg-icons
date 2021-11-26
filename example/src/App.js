@@ -49,8 +49,8 @@ const App = () => {
         onClick={() => {
           message.success("Hello CLFButtonSVG", 0.2);
         }}
-        onKeyClick={() => {
-          message.success("This is key + click", 0.2);
+        onKeyClick={(event, keyboard) => {
+          message.success(`This is key + click ${keyboard.toString()}`, 0.2);
         }}
         width={"150px"}
       />
@@ -63,8 +63,8 @@ const App = () => {
         onClick={() => {
           message.success("Hello CLFButtonSVG", 0.2);
         }}
-        onKeyClick={() => {
-          message.success("This is key + click", 0.2);
+        onKeyClick={(event, keyboard) => {
+          message.success(`This is key + click ${keyboard.toString()}`, 0.2);
         }}
         disable={false}
         width={"150px"}
@@ -79,8 +79,8 @@ const App = () => {
         onClick={() => {
           message.success("Hello CLFButtonSVG", 0.2);
         }}
-        onKeyClick={() => {
-          message.success("This is key + click", 0.2);
+        onKeyClick={(event, keyboard) => {
+          message.success(`This is key + click ${keyboard.toString()}`, 0.2);
         }}
         disable={false}
         width={"150px"}
@@ -96,8 +96,8 @@ const App = () => {
         onClick={() => {
           message.success("Hello CLFButtonSVG", 0.2);
         }}
-        onKeyClick={() => {
-          message.success("This is key + click", 0.2);
+        onKeyClick={(event, keyboard) => {
+          message.success(`This is key + click ${keyboard.toString()}`, 0.2);
         }}
         disable={false}
         block={true}
@@ -112,8 +112,8 @@ const App = () => {
         onClick={() => {
           message.success("Hello CLFButtonSVG", 0.2);
         }}
-        onKeyClick={() => {
-          message.success("This is key + click", 0.2);
+        onKeyClick={(event, keyboard) => {
+          message.success(`This is key + click ${keyboard.toString()}`, 0.2);
         }}
         disable={false}
         block={true}
