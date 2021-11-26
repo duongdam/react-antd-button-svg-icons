@@ -175,7 +175,7 @@ const CLFButtonSVG = ({
           className={className}
           color={rest.color}
           otherprops={{
-            minWidth,
+            minWidth: iconComponent && name ? "125px" : minWidth,
             minHeight,
             borderRadius,
             borderColor,
