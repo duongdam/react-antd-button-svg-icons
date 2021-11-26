@@ -11,10 +11,16 @@ Resource: [https://github.com/duongdam/react-antd-button-svg-icons](https://gith
 
 ![plot](buttonNPM.gif)
 
-## New release
+## New release 2.3.2
 
 ```angular2html
- - Add new props turn off animated: offAnimated : default "true"
+- Use cf-gen-id from : https://www.npmjs.com/package/cf-gen-id
+- Fix issue: https://github.com/duongdam/react-antd-button-svg-icons/issues/2
+- Remove package react-use, keyboardjs to reduce size, add useHostKey
+- New flow to use keyboard + onclick, reduce package size
+
+Ver 2.3.1
+- Add new props turn off animated: offAnimated : default "true"
 ```
 
 ## Install
@@ -34,9 +40,11 @@ import { CLFButtonSVG } from "react-antd-button-svg-icons";
 import React from "react";
 import { ReactComponent as TestSVG } from "./test.svg";
 import { CLFButtonSVG } from "react-antd-button-svg-icons";
-import { message } from "antd";
+import { message, Typography } from "antd";
 import "antd/lib/message/style/css";
 import { makeStyles } from "@material-ui/core/styles";
+
+const { Text } = Typography;
 
 const useStyles = makeStyles(theme => ({
   antBtn: {
@@ -75,27 +83,39 @@ const App = () => {
 
       With no icon
       <CLFButtonSVG
-        name={"ClassFunc"}
+        name={"私はズオンです。"}
+        // name={"ズオ"}
         size={"default"}
-        onClick={() => {
+        keyboard={["ctrl", "meta"]}
+        onClick={(event, keyboard) => {
+          if (keyboard)
+            return message.success(`This is key + click ${keyboard.toString()}`, 0.2);
           message.success("Hello CLFButtonSVG", 0.2);
         }}
-        onKeyClick={() => {
-          message.success("This is key + click", 0.2);
+      />
+
+      Default no text
+      <CLFButtonSVG
+        name={null}
+        size={"default"}
+        iconComponent={<TestSVG/>}
+        onClick={(event, keyboard) => {
+          if (keyboard)
+            return message.success(`This is key + click ${keyboard.toString()}`, 0.2);
+          message.success("Hello CLFButtonSVG", 0.2);
         }}
-        width={"150px"}
+        disable={false}
       />
 
       Default
       <CLFButtonSVG
-        name={"ClassFunc"}
+        name={<Text>Default</Text>}
         size={"default"}
         iconComponent={<TestSVG/>}
-        onClick={() => {
+        onClick={(event, keyboard) => {
+          if (keyboard)
+            return message.success(`This is key + click ${keyboard.toString()}`, 0.2);
           message.success("Hello CLFButtonSVG", 0.2);
-        }}
-        onKeyClick={() => {
-          message.success("This is key + click", 0.2);
         }}
         disable={false}
         width={"150px"}
@@ -107,11 +127,10 @@ const App = () => {
         size={"default"}
         iconComponent={<TestSVG/>}
         iconRevert={true}
-        onClick={() => {
+        onClick={(event, keyboard) => {
+          if (keyboard)
+            return message.success(`This is key + click ${keyboard.toString()}`, 0.2);
           message.success("Hello CLFButtonSVG", 0.2);
-        }}
-        onKeyClick={() => {
-          message.success("This is key + click", 0.2);
         }}
         disable={false}
         width={"150px"}
@@ -124,11 +143,10 @@ const App = () => {
         name={"Full Width"}
         size={"default"}
         iconComponent={<TestSVG/>}
-        onClick={() => {
+        onClick={(event, keyboard) => {
+          if (keyboard)
+            return message.success(`This is key + click ${keyboard.toString()}`, 0.2);
           message.success("Hello CLFButtonSVG", 0.2);
-        }}
-        onKeyClick={() => {
-          message.success("This is key + click", 0.2);
         }}
         disable={false}
         block={true}
@@ -140,11 +158,10 @@ const App = () => {
         name={"With tooltip"}
         size={"default"}
         iconComponent={<TestSVG/>}
-        onClick={() => {
+        onClick={(event, keyboard) => {
+          if (keyboard)
+            return message.success(`This is key + click ${keyboard.toString()}`, 0.2);
           message.success("Hello CLFButtonSVG", 0.2);
-        }}
-        onKeyClick={() => {
-          message.success("This is key + click", 0.2);
         }}
         disable={false}
         block={true}
@@ -192,6 +209,7 @@ const App = () => {
 };
 
 export default App;
+
 
 ```
 
