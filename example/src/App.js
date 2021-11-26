@@ -44,15 +44,28 @@ const App = () => {
 
       With no icon
       <CLFButtonSVG
-        name={"ClassFunc"}
+        name={"私はズオンです。"}
+        // name={"ズオ"}
         size={"default"}
-        onClick={() => {
+        keyboard={["ctrl", "meta"]}
+        onClick={(event, keyboard) => {
+          if (keyboard)
+            return message.success(`This is key + click ${keyboard.toString()}`, 0.2);
           message.success("Hello CLFButtonSVG", 0.2);
         }}
-        onKeyClick={(event, keyboard) => {
-          message.success(`This is key + click ${keyboard.toString()}`, 0.2);
+      />
+
+      Default no text
+      <CLFButtonSVG
+        name={null}
+        size={"default"}
+        iconComponent={<TestSVG />}
+        onClick={(event, keyboard) => {
+          if (keyboard)
+            return message.success(`This is key + click ${keyboard.toString()}`, 0.2);
+          message.success("Hello CLFButtonSVG", 0.2);
         }}
-        width={"150px"}
+        disable={false}
       />
 
       Default
@@ -60,11 +73,10 @@ const App = () => {
         name={<Text>Default</Text>}
         size={"default"}
         iconComponent={<TestSVG />}
-        onClick={() => {
+        onClick={(event, keyboard) => {
+          if (keyboard)
+            return message.success(`This is key + click ${keyboard.toString()}`, 0.2);
           message.success("Hello CLFButtonSVG", 0.2);
-        }}
-        onKeyClick={(event, keyboard) => {
-          message.success(`This is key + click ${keyboard.toString()}`, 0.2);
         }}
         disable={false}
         width={"150px"}
@@ -76,11 +88,10 @@ const App = () => {
         size={"default"}
         iconComponent={<TestSVG />}
         iconRevert={true}
-        onClick={() => {
+        onClick={(event, keyboard) => {
+          if (keyboard)
+            return message.success(`This is key + click ${keyboard.toString()}`, 0.2);
           message.success("Hello CLFButtonSVG", 0.2);
-        }}
-        onKeyClick={(event, keyboard) => {
-          message.success(`This is key + click ${keyboard.toString()}`, 0.2);
         }}
         disable={false}
         width={"150px"}
@@ -93,11 +104,10 @@ const App = () => {
         name={"Full Width"}
         size={"default"}
         iconComponent={<TestSVG />}
-        onClick={() => {
+        onClick={(event, keyboard) => {
+          if (keyboard)
+            return message.success(`This is key + click ${keyboard.toString()}`, 0.2);
           message.success("Hello CLFButtonSVG", 0.2);
-        }}
-        onKeyClick={(event, keyboard) => {
-          message.success(`This is key + click ${keyboard.toString()}`, 0.2);
         }}
         disable={false}
         block={true}
@@ -109,11 +119,10 @@ const App = () => {
         name={"With tooltip"}
         size={"default"}
         iconComponent={<TestSVG />}
-        onClick={() => {
+        onClick={(event, keyboard) => {
+          if (keyboard)
+            return message.success(`This is key + click ${keyboard.toString()}`, 0.2);
           message.success("Hello CLFButtonSVG", 0.2);
-        }}
-        onKeyClick={(event, keyboard) => {
-          message.success(`This is key + click ${keyboard.toString()}`, 0.2);
         }}
         disable={false}
         block={true}

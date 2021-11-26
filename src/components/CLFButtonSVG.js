@@ -112,9 +112,9 @@ const NameCustomWithIcon = styled.div(props => ({
 }));
 
 const NameCustom = styled.div(props => ({
-  margin: "auto",
+  margin: "auto 10px",
   height: "100%",
-  width: "70%",
+  width: "100%",
   overflow: "hidden",
   textOverflow: "ellipsis",
   whiteSpace: "nowrap"
@@ -144,18 +144,16 @@ const CLFButtonSVG = ({
                         ...rest
                       }) => {
   const inputRef = React.createRef();
-  const [keySnap] = useHotKey(keyboard);
+  const [keySnap, setKeySnap] = useHotKey(keyboard);
 
   const onClickFunction = (event) => {
-    if (keySnap) {
-      if (onKeyClick && typeof onKeyClick === "function")
-        return onKeyClick(event, keyboard);
-      return null;
-    }
     if (onClick && typeof onClick === "function")
-      onClick(event);
+      if (keySnap) {
+        setKeySnap(false);
+        return onClick(event, keyboard);
+      }
+    onClick(event);
   };
-
 
   return (
     <TooltipCustom
@@ -203,7 +201,6 @@ const CLFButtonSVG = ({
             null
           }
           onClick={onClickFunction}
-
         >
           {
             !iconComponent ?
@@ -280,8 +277,8 @@ CLFButtonSVG.defaultProps = {
   className: null,
   width: null,
   height: "auto",
-  minWidth: "125px",
-  minHeight: "35px",
+  minWidth: "40px",
+  minHeight: "40px",
   fontWeight: 700,
   color: "#FFF",
   borderRadius: "25px",
