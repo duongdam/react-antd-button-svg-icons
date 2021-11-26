@@ -2,10 +2,10 @@ import React from "react";
 import { Button, Tooltip } from "antd";
 import "antd/lib/button/style/css";
 import "antd/lib/tooltip/style/css";
-import { useKeyboardJs } from "react-use";
 import styled from "styled-components";
-import { v4 as uuidv4 } from "uuid";
 import PropType from "prop-types";
+import genId from "cf-gen-id";
+import useHotKey from "./useHotKey";
 
 const ButtonCustom = styled(Button)`
   position: relative;
@@ -112,9 +112,9 @@ const NameCustomWithIcon = styled.div(props => ({
 }));
 
 const NameCustom = styled.div(props => ({
-  margin: "auto",
+  margin: "auto 10px",
   height: "100%",
-  width: "70%",
+  width: "100%",
   overflow: "hidden",
   textOverflow: "ellipsis",
   whiteSpace: "nowrap"
@@ -140,20 +140,19 @@ const CLFButtonSVG = ({
                         fontSize,
                         fontWeight,
                         offAnimated,
+                        keyboard,
                         ...rest
                       }) => {
   const inputRef = React.createRef();
-  const [isCtrl] = useKeyboardJs("ctrl");
-  const [isCmd] = useKeyboardJs("command");
+  const [keySnap, setKeySnap] = useHotKey(keyboard);
 
   const onClickFunction = (event) => {
-    if (isCmd || isCtrl) {
-      if (onKeyClick && typeof onKeyClick === "function")
-        return onKeyClick();
-      return null;
-    }
     if (onClick && typeof onClick === "function")
-      onClick(event);
+      if (keySnap) {
+        setKeySnap(false);
+        return onClick(event, keyboard);
+      }
+    onClick(event);
   };
 
   return (
@@ -202,7 +201,6 @@ const CLFButtonSVG = ({
             null
           }
           onClick={onClickFunction}
-
         >
           {
             !iconComponent ?
@@ -240,6 +238,7 @@ CLFButtonSVG.propTypes = {
   color: PropType.string,
   borderRadius: PropType.oneOfType([PropType.string]),
   background: PropType.string,
+  keyboard: PropType.oneOfType([PropType.arrayOf(PropType.string), PropType.string]),
   borderColor: PropType.string,
   iconRevert: PropType.bool,
   onKeyClick: PropType.func,
@@ -264,7 +263,7 @@ CLFButtonSVG.propTypes = {
 };
 
 CLFButtonSVG.defaultProps = {
-  id: uuidv4(),
+  id: genId("cf_button_"),
   iconComponent: null,
   name: "ClassFunc Button",
   onClick: null,
@@ -278,12 +277,13 @@ CLFButtonSVG.defaultProps = {
   className: null,
   width: null,
   height: "auto",
-  minWidth: "125px",
-  minHeight: "35px",
+  minWidth: "40px",
+  minHeight: "40px",
   fontWeight: 700,
   color: "#FFF",
   borderRadius: "25px",
   background: "#1790FF",
+  keyboard: ["ctrl", "meta"],
   borderColor: "#1790FF",
   iconRevert: false,
   onKeyClick: null,
