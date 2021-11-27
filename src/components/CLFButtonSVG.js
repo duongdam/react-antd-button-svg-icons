@@ -278,7 +278,7 @@ CLFButtonSVG.defaultProps = {
   width: null,
   height: "auto",
   minWidth: "40px",
-  minHeight: "40px",
+  minHeight: "35px",
   fontWeight: 700,
   color: "#FFF",
   borderRadius: "25px",

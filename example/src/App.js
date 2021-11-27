@@ -66,6 +66,7 @@ const App = () => {
           message.success("Hello CLFButtonSVG", 0.2);
         }}
         disable={false}
+        minHeight={"40px"}
       />
 
       Default
