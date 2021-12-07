@@ -11,9 +11,10 @@ Resource: [https://github.com/duongdam/react-antd-button-svg-icons](https://gith
 
 ![plot](buttonNPM.gif)
 
-## New release 2.3.2
+## New release 2.3.5
 
 ```angular2html
+- Fix onclick function
 - Use cf-gen-id from : https://www.npmjs.com/package/cf-gen-id
 - Fix issue: https://github.com/duongdam/react-antd-button-svg-icons/issues/2
 - Remove package react-use, keyboardjs to reduce size, add useHostKey
