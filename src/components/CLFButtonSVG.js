@@ -147,12 +147,13 @@ const CLFButtonSVG = ({
   const [keySnap, setKeySnap] = useHotKey(keyboard);
 
   const onClickFunction = (event) => {
-    if (onClick && typeof onClick === "function")
+    if (onClick && typeof onClick === "function") {
       if (keySnap) {
         setKeySnap(false);
         return onClick(event, keyboard);
       }
-    onClick(event);
+      onClick(event);
+    }
   };
 
   return (
